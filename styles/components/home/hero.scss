@@ -1,0 +1,111 @@
+/* stylelint-disable function-no-unknown */
+/* stylelint-disable selector-max-compound-selectors */
+.hero {
+    height: 100vh;
+    background: $blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .content {
+        margin-left: grid(1, 1);
+
+        h1 {
+            width: 56rem;
+            position: relative;
+            z-index: 1;
+
+            @include devices(mobile) {
+                width: 90rem;
+            }
+        }
+
+        p {
+            width: 63.5rem;
+            font-size: $fs-body;
+            line-height: $lh-body;
+            margin: 4rem 0;
+
+            @include devices(mobile) {
+                width: 123rem;
+                line-height: 7.5rem;
+                font-weight: 100;
+                margin: 11.5rem 0;
+            }
+        }
+
+        @include devices(mobile) {
+            margin-left: 10rem;
+        }
+    }
+
+    .scene {
+        .floor {
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .mascot {
+            position: absolute;
+            bottom: 14rem;
+            right: 16rem;
+            width: 41rem;
+            height: 33rem;
+            z-index: 1;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .clouds {
+            position: absolute;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            top: 0;
+
+            .cloud {
+                position: absolute;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:nth-child(1) {
+                    top: -1rem;
+                    left: -1rem;
+                    width: 41rem;
+                }
+
+                &:nth-child(2) {
+                    top: 0;
+                    left: 55rem;
+                    width: 15rem;
+                }
+
+                &:nth-child(3) {
+                    top: -5rem;
+                    left: 75rem;
+                    width: 21rem;
+                }
+
+                &:nth-child(4) {
+                    right: -5rem;
+                    top: 17rem;
+                    width: 21rem;
+                }
+            }
+        }
+    }
+}

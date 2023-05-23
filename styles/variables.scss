@@ -1,0 +1,61 @@
+/* stylelint-disable color-named */
+@mixin devices ($breakpoint) {
+
+    @if $breakpoint ==mobile {
+        @media (max-width: 875px) {
+            @content;
+        }
+    }
+}
+
+// curve
+$ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+
+// colors
+$blue: #ADD6F4;
+$blue-30: rgb(173 214 244 / 30%);
+$green: #46B9B0;
+$green-30: rgb(70 185 175 / 30%);
+$purple: #899CFF;
+$yellow: #FAB611;
+$yellow-30: rgb(250 182 17 / 30%);
+$pink: #FFBBE8;
+
+$light-blue: #f3f5ff;
+$light-yellow: #fffef6;
+
+$white: #fff;
+$black: #1b1b1b;
+$grey: #7c7c7c;
+
+// grid
+$g-col-12: repeat(12, minmax(0, 1fr));
+$g-gap: 1.6rem;
+$g-col: 15rem;
+$padding-x: 5rem;
+$padding-y: 5rem;
+$padding: 5rem;
+
+@function grid($col, $gap: 0) {
+    @return $col * 15rem+1.6rem * $gap;
+}
+
+
+// fonts
+$fs-h1: 6rem;
+$fs-h2: 3rem;
+$fs-body: 1.8rem;
+$fs-reg: 1rem;
+
+// line height
+$lh-h1: 7rem;
+$lh-h2: 13rem;
+$lh-body: 2.5rem;
+$lh-reg: 1rem;
+
+// card
+$card-radius: 10px;
+
+@include devices(mobile) {
+    $fs-body: 5rem;
+}

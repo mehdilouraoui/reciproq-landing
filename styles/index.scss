@@ -1,0 +1,18 @@
+/* stylelint-disable scss/at-import-partial-extension-blacklist */
+/* stylelint-disable import-notation */
+@import './variables.scss';
+@import './components/base';
+@import './components/fonts';
+@import './components/shared';
+@import './components/home/hero';
+@import './components/home/needs';
+@import './components/home/verbatims';
+@import './components/home/big-idea';
+@import './components/home/community';
+@import './components/home/cloudy-lines';
+@import './components/home/teams';
+@import './components/home/retrospective';
+@import './components/home/notify';
+@import './pages/root';
+@import './pages/home';
+

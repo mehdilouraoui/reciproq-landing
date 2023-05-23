@@ -1,0 +1,46 @@
+.community {
+    position: relative;
+    margin: 0 auto 20rem;
+
+    h1 {
+        margin: 0 0 5rem;
+        padding: 0 14rem;
+        position: relative;
+    }
+
+    p {
+        width: 25rem;
+        margin-left: 14rem;
+        line-height: 1.2;
+        font-size: $fs-body;
+    }
+
+    &-circles {
+        width: 100%;
+        position: absolute;
+        overflow-x: hidden;
+        height: 250rem;
+        top: -120rem;
+        pointer-events: none;
+
+        .circle {
+            &.green {
+                top: 70rem;
+                left: -60rem;
+            }
+
+            &.yellow {
+                width: 45rem;
+                height: 45rem;
+                top: 100rem;
+                right: -30rem;
+            }
+        }
+    }
+
+    @include devices(mobile) {
+        p {
+            display: none;
+        }
+    }
+}
