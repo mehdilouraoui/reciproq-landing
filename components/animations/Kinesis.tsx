@@ -27,9 +27,6 @@ export const Kinesis: FCC<{
         const containerRef = useRef<HTMLDivElement>(null);
 
         useEffect(() => {
-            if (isMobile) {
-                return;
-            }
             const containerRefCopy = containerRef.current;
             const onMouseMove = (event: MouseEvent) => {
                 if (isTouchDevice) return;
@@ -44,19 +41,21 @@ export const Kinesis: FCC<{
                 });
             };
 
-            const replace = () => {
-                if (replaceOnLeave) {
-                    gsap.to(childRef.current, {
-                        x: 0,
-                        y: 0,
-                        duration: 1,
-                        ease: 'expo.out',
-                    });
-                }
-            };
+            if (isMobile === false) {
+                const replace = () => {
+                    if (replaceOnLeave) {
+                        gsap.to(childRef.current, {
+                            x: 0,
+                            y: 0,
+                            duration: 1,
+                            ease: 'expo.out',
+                        });
+                    }
+                };
 
-            containerRef.current?.addEventListener('mousemove', onMouseMove, false);
-            containerRef.current?.addEventListener('mouseleave', replace, false);
+                containerRef.current?.addEventListener('mousemove', onMouseMove, false);
+                containerRef.current?.addEventListener('mouseleave', replace, false);
+            }
 
             return () => {
                 containerRefCopy?.removeEventListener(

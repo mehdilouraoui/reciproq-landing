@@ -3,6 +3,7 @@
 import Lenis from '@studio-freight/lenis';
 import { useState } from 'react';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayout';
+import { useWindowSize } from './useWindowSize';
 
 const defaultLenisParams = {
     duration: 1.2,
@@ -19,9 +20,13 @@ const defaultLenisParams = {
 export const useLenis = () => {
     const [lenis, setLenis] = useState<Lenis>();
     const [newLenis, setNewLenis] = useState(0);
+    const { isMobile } = useWindowSize();
 
     useIsomorphicLayoutEffect(() => {
         const lenis = new Lenis(defaultLenisParams);
+        if (isMobile) {
+            lenis.destroy();
+        }
 
         setLenis(lenis);
 
@@ -37,7 +42,7 @@ export const useLenis = () => {
 
             cancelAnimationFrame(req);
         };
-    }, [newLenis]);
+    }, [newLenis, isMobile]);
 
     const resetLenis = () => setNewLenis(newLenis + 1);
 
