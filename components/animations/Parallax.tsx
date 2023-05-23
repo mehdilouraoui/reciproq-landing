@@ -17,32 +17,40 @@ export const Parallax: FCC<{
     const trigger = useRef<HTMLDivElement>(null);
     const target = useRef<HTMLDivElement>(null);
     const timeline = useRef<gsap.core.Timeline>();
-    const { width: windowWidth } = useWindowSize();
+    const { width: windowWidth, isMobile } = useWindowSize();
 
     useEffect(() => {
         const y = windowWidth! * speed * 0.1;
 
-        timeline.current = gsap
-            .timeline({
-                scrollTrigger: {
-                    id,
-                    trigger:
-                        position === 'top' ? document.body : trigger.current,
-                    scrub: true,
-                    start: position === 'top' ? 'top top' : 'top bottom',
-                    end: position === 'top' ? '+=100%' : 'bottom top',
-                },
-            })
-            .fromTo(
-                target.current,
-                { y: position === 'top' ? 0 : -y },
-                { y: y, ease: 'none' },
-            );
+        if (isMobile) {
+            timeline.current?.kill();
+        } else if (isMobile === false) {
+            timeline.current = gsap
+                .timeline({
+                    scrollTrigger: {
+                        id,
+                        trigger:
+                            position === 'top'
+                                ? document.body
+                                : trigger.current,
+                        scrub: true,
+                        start: position === 'top' ? 'top top' : 'top bottom',
+                        end: position === 'top' ? '+=100%' : 'bottom top',
+                    },
+                })
+                .fromTo(
+                    target.current,
+                    { y: position === 'top' ? 0 : -y },
+                    { y: y, ease: 'none' },
+                );
+        } else {
+            timeline.current?.kill();
+        }
 
         return () => {
             timeline?.current?.kill();
         };
-    }, [id, speed, position, windowWidth]);
+    }, [id, speed, position, windowWidth, isMobile]);
 
     return (
         <div ref={trigger}>
