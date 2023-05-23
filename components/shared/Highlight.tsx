@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useRef } from 'react';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
+import { useWindowSize } from '@/hooks/useWindowSize';
 import { FCC } from '@/types';
 
 type HighlightProps = { color: 'green' | 'blue' | 'orange' };
@@ -11,12 +12,15 @@ type HighlightProps = { color: 'green' | 'blue' | 'orange' };
 export const Highlight: FCC<HighlightProps> = ({ color }) => {
     const container = useRef<HTMLDivElement>(null);
     const ref = useRef<SVGPathElement>(null);
+    const { isMobile } = useWindowSize();
 
     useIsomorphicLayoutEffect(() => {
-        const totalLength = ref.current?.getTotalLength();
-        const stroke = `stroke-dasharray: ${totalLength}; stroke-dashoffset: ${totalLength}`;
-        ref.current?.setAttribute('style', stroke);
-    }, []);
+        if (isMobile === false) {
+            const totalLength = ref.current?.getTotalLength();
+            const stroke = `stroke-dasharray: ${totalLength}; stroke-dashoffset: ${totalLength}`;
+            ref.current?.setAttribute('style', stroke);
+        }
+    }, [isMobile]);
 
     useIsomorphicLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);

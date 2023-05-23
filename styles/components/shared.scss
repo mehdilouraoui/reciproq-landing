@@ -171,7 +171,15 @@
   .pathLine {
     animation: dashline 1s linear;
     animation-fill-mode: forwards;
+
+    @include devices(mobile) {
+      animation: dashlineMobile 0s linear;
+      stroke-dashoffset: 0 !important;
+    }
+
+    stroke-dashoffset: 0 !important;
   }
+
 }
 
 .float {
@@ -179,6 +187,16 @@
 }
 
 @keyframes dashline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dashlineMobile {
+  from {
+    stroke-dashoffset: 0;
+  }
+
   to {
     stroke-dashoffset: 0;
   }

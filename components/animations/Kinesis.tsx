@@ -20,13 +20,16 @@ export const Kinesis: FCC<{
     speed = 100,
     replaceOnLeave = false,
 }) => {
-        const { width, height } = useWindowSize();
+        const { width, height, isMobile } = useWindowSize();
         const isTouchDevice = useIsTouchDevice();
 
         const childRef = useRef<HTMLDivElement>(null);
         const containerRef = useRef<HTMLDivElement>(null);
 
         useEffect(() => {
+            if (isMobile) {
+                return;
+            }
             const containerRefCopy = containerRef.current;
             const onMouseMove = (event: MouseEvent) => {
                 if (isTouchDevice) return;
@@ -62,7 +65,7 @@ export const Kinesis: FCC<{
                     false,
                 );
             };
-        }, [speed, width, height, isTouchDevice, replaceOnLeave]);
+        }, [speed, width, height, isTouchDevice, replaceOnLeave, isMobile]);
 
         return (
             <div ref={containerRef} className={className}>
