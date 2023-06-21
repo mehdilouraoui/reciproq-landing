@@ -1,14 +1,22 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Highlight } from '@/components/shared/Highlight';
 import { MobileWrapper } from '@/components/shared/MobileWrapper';
 import { QuoteMark } from '@/components/shared/Picto';
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import { FCC } from '@/types';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface IPhylactery {
     top: number;
     left: number;
     width: number;
     color: 'yellow' | 'blue' | 'green' | 'lightblue';
+    index: number;
 }
 
 interface IIdentity {
@@ -20,6 +28,7 @@ interface IIdentity {
     label2: string;
     city: string;
     img: string;
+    index: number;
 }
 
 const Phylactery: FCC<IPhylactery> = ({
@@ -28,10 +37,12 @@ const Phylactery: FCC<IPhylactery> = ({
     top,
     left,
     width,
+    index,
 }) => {
     return (
         <div
             className={`phylactery ${color}`}
+            id={`phylactery--${index}`}
             style={{
                 top: `${top}rem`,
                 left: `${left}rem`,
@@ -58,10 +69,12 @@ const Identity: FCC<IIdentity> = ({
     img,
     top,
     left,
+    index,
 }) => {
     return (
         <div
             className="identity"
+            id={`identity--${index}`}
             style={{
                 top: `${top}rem`,
                 left: `${left}rem`,
@@ -86,6 +99,29 @@ const Identity: FCC<IIdentity> = ({
 };
 
 export const Verbatims = () => {
+    const elements = [
+        { trigger: '#phylactery--0', target: '#identity--0' },
+        { trigger: '#phylactery--1', target: '#identity--1' },
+        { trigger: '#phylactery--2', target: '#identity--2' },
+        { trigger: '#phylactery--3', target: '#identity--3' },
+        { trigger: '#phylactery--4', target: '#identity--4' },
+    ];
+    useIsomorphicLayoutEffect(() => {
+        elements.forEach(({ trigger, target }) => {
+            gsap.set([trigger, target], {
+                opacity: 0,
+            });
+            gsap.to([trigger, target], {
+                scrollTrigger: {
+                    trigger,
+                    start: 'center center',
+                },
+                opacity: 1,
+                stagger: 0.15,
+            });
+        });
+    }, []);
+
     return (
         <div className="verbatims">
             <h1>
@@ -94,28 +130,59 @@ export const Verbatims = () => {
                 <Highlight color="blue" />
             </h1>
             <div className="verbatims-items">
-                <Phylactery color="blue" top={25.5} left={10.5} width={50}>
+                <Phylactery
+                    color="blue"
+                    top={25.5}
+                    left={10.5}
+                    width={50}
+                    index={0}
+                >
                     Je cherche un psychologue expert des troubles anxieux pour
                     réorienter un patient dans sa ville.
                 </Phylactery>
-                <Phylactery color="green" top={31.5} left={94.5} width={34}>
+                <Phylactery
+                    color="green"
+                    top={31.5}
+                    left={94.5}
+                    width={34}
+                    index={1}
+                >
                     Je propose de former un groupe d’intervision proche de mon
                     lieu de travail ou à distance.
                 </Phylactery>
-                <Phylactery color="yellow" top={66} left={85} width={41}>
+                <Phylactery
+                    color="yellow"
+                    top={66}
+                    left={85}
+                    width={41}
+                    index={2}
+                >
                     Je partage mon ressenti et mes difficultés dans ma safe
                     place de consoeurs proches.
                 </Phylactery>
-                <Phylactery color="blue" top={87.5} left={46.5} width={39}>
+                <Phylactery
+                    color="blue"
+                    top={87.5}
+                    left={46.5}
+                    width={39}
+                    index={3}
+                >
                     Je propose de former un groupe d’intervision proche de mon
                     lieu de travail ou à distance.
                 </Phylactery>
-                <Phylactery color="lightblue" top={53} left={5} width={31}>
+                <Phylactery
+                    color="lightblue"
+                    top={53}
+                    left={5}
+                    width={31}
+                    index={4}
+                >
                     Je partage mon ressenti et mes difficultés dans ma safe
                     place de consoeurs proches.
                 </Phylactery>
                 <MobileWrapper className="identity-w">
                     <Identity
+                        index={0}
                         img="/assets/img/guillaume.png"
                         name="Guillaume"
                         id="#098567354"
@@ -126,6 +193,7 @@ export const Verbatims = () => {
                         left={40}
                     />
                     <Identity
+                        index={1}
                         img="/assets/img/guillaume.png"
                         name="Guillaume"
                         id="#098567354"
@@ -136,6 +204,7 @@ export const Verbatims = () => {
                         left={101}
                     />
                     <Identity
+                        index={2}
                         img="/assets/img/guillaume.png"
                         name="Guillaume"
                         id="#098567354"
@@ -146,6 +215,7 @@ export const Verbatims = () => {
                         left={105}
                     />
                     <Identity
+                        index={3}
                         img="/assets/img/guillaume.png"
                         name="Guillaume"
                         id="#098567354"
@@ -156,6 +226,7 @@ export const Verbatims = () => {
                         left={48}
                     />
                     <Identity
+                        index={4}
                         img="/assets/img/guillaume.png"
                         name="Guillaume"
                         id="#098567354"

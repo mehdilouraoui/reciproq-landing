@@ -73,9 +73,7 @@ export const Retrospective = () => {
                 ))}
             </div>
             <div className="retrospective-sign">
-                <span>
-                    Et on <strong>2023</strong> on crée l'outil
-                </span>
+                <span>Conception en cours...</span>
                 <Sign />
             </div>
         </div>

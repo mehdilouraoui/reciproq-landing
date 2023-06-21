@@ -1,7 +1,7 @@
 import { Circle } from '../needs';
 import { Kinesis } from '@/components/animations/Kinesis';
 import { Parallax } from '@/components/animations/Parallax';
-import { Mascot, Psy } from '@/components/shared/Picto';
+import { BlueMascot, Psy } from '@/components/shared/Picto';
 
 /* eslint-disable @next/next/no-img-element */
 export const Teams = () => {
@@ -9,7 +9,7 @@ export const Teams = () => {
         <div className="teams">
             <div className="teams-picto picto-1">
                 <Parallax id="picto-prlx-1" speed={0.5}>
-                    <Mascot />
+                    <BlueMascot />
                 </Parallax>
             </div>
             <div className="teams-picto picto-2">
@@ -58,23 +58,23 @@ export const Teams = () => {
                     </p>
                 </div>
                 <div className="teams-description-labels">
-                    <Kinesis speed={15} replaceOnLeave>
+                    <Kinesis speed={0} replaceOnLeave>
                         <div className="teams-description-labels-item">
                             Réciprocité
                         </div>
                     </Kinesis>
 
-                    <Kinesis speed={15} replaceOnLeave>
+                    <Kinesis speed={0} replaceOnLeave>
                         <div className="teams-description-labels-item">
                             Confiance
                         </div>
                     </Kinesis>
-                    <Kinesis speed={15} replaceOnLeave>
+                    <Kinesis speed={0} replaceOnLeave>
                         <div className="teams-description-labels-item">
                             Transparence
                         </div>
                     </Kinesis>
-                    <Kinesis speed={15} replaceOnLeave>
+                    <Kinesis speed={0} replaceOnLeave>
                         <div className="teams-description-labels-item">
                             Convivialité
                         </div>

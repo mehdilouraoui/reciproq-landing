@@ -18,7 +18,7 @@
 }
 
 .logo {
-  position: fixed;
+  position: absolute;
   top: $padding;
   left: $padding;
   width: 22rem;
@@ -32,6 +32,7 @@
   @include devices(mobile) {
     width: 80rem;
     left: 10rem;
+    position: fixed;
 
     &-str {
       display: none;
@@ -126,9 +127,9 @@
   }
 
   &.blue {
-    width: 40rem;
-    right: 15rem;
-    top: 6rem;
+    width: 22rem;
+    right: 26.5rem;
+    top: 8rem;
     height: 8rem;
 
     @include devices(mobile) {

@@ -2,10 +2,15 @@
 /* stylelint-disable selector-max-compound-selectors */
 .hero {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background: $blue;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @include devices(mobile) {
+        position: relative;
+    }
 
     .content {
         margin-left: grid(1, 1);
@@ -53,6 +58,13 @@
             }
         }
 
+        @include devices(mobile) {
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+            width: 100vw;
+            position: absolute;
+        }
+
         .mascot {
             position: absolute;
             bottom: 14rem;
@@ -83,29 +95,64 @@
                 }
 
                 &:nth-child(1) {
-                    top: -1rem;
-                    left: -1rem;
+                    top: -10rem;
+                    left: -4rem;
                     width: 41rem;
+                    z-index: 1;
+                    animation: move1 120s linear 0s infinite;
                 }
 
                 &:nth-child(2) {
                     top: 0;
-                    left: 55rem;
-                    width: 15rem;
+                    left: 45rem;
+                    width: 19rem;
+                    animation: move2 70s linear 0s infinite;
                 }
 
                 &:nth-child(3) {
                     top: -5rem;
                     left: 75rem;
                     width: 21rem;
+                    animation: move2 120s linear 0s infinite;
                 }
 
                 &:nth-child(4) {
                     right: -5rem;
                     top: 17rem;
                     width: 21rem;
+                    animation: move3 120s linear 0s infinite;
                 }
             }
         }
+    }
+}
+
+@keyframes move1 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(50rem, 0, 0);
+    }
+}
+
+@keyframes move2 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(20rem, 0, 0);
+    }
+}
+
+@keyframes move3 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(15rem, 0, 0);
     }
 }

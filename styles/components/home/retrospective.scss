@@ -121,6 +121,10 @@
                 margin-bottom: 10rem;
             }
 
+            &-curve {
+                display: none;
+            }
+
             &-cards {
                 margin: 0;
                 width: calc(100% - 20rem);

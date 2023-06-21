@@ -1,11 +1,13 @@
 /* stylelint-disable selector-no-qualifying-type */
 .notify {
-    height: 100rem;
+    height: 92rem;
     background: $blue;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    padding-top: 30rem;
     padding-left: 14rem;
+    padding-bottom: 45rem;
     position: relative;
     overflow: hidden;
 
@@ -251,6 +253,5 @@
 
     &-footer {
         font-size: 15px;
-        height: 8rem;
     }
 }

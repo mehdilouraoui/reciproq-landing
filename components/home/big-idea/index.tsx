@@ -1,10 +1,10 @@
-import { Mascot } from '@/components/shared/Picto';
+import { TrackedEyesMascot } from '@/components/shared/Picto';
 
 export const BigIdea = () => {
     return (
         <div className="big-idea">
             <div className="big-idea-mascot">
-                <Mascot />
+                <TrackedEyesMascot />
             </div>
             <p>
                 Grâce à une méthode qui met <strong>les psychologues</strong> au

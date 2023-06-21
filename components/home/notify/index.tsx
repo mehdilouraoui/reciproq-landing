@@ -8,8 +8,8 @@ export const Notify = () => {
             <h1>Notifiez-moi pour adopter mon compagnon psy</h1>
             <p>
                 En partageant votre adresse email, vous serez prévenu.e de la
-                date de sortie de Reciproq en 2023. Veuillez renseigner votre
-                adresse mail ainsi que votre profil psychologue.
+                date de sortie de Reciproq. Veuillez renseigner votre adresse
+                mail ainsi que votre profil psychologue.
             </p>
             <NotifyNewsletter />
 

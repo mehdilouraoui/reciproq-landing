@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/shared/Button';
-import { HandUp, Heart } from '@/components/shared/Picto';
+import { MascotWithHeart } from '@/components/shared/Picto';
+
 const profils = [
     'Libéral',
     'Institution',
@@ -67,12 +68,7 @@ export const NotifyNewsletter = () => {
                 L’équipe Reciproq s’engage à respecter votre vie privée et à ne
                 pas diffuser, vendre, partager votre adresse e-mail.
             </span>
-            <div className="notify-hand-up">
-                <HandUp />
-            </div>
-            <div className="notify-heart">
-                <Heart />
-            </div>
+            <MascotWithHeart />
         </div>
     );
 };
