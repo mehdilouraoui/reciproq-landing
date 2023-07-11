@@ -78,7 +78,7 @@ export const NotifyNewsletter = () => {
                     wink();
                 }
             })
-            .catch(err => console.log({ err }));
+            .catch(err => err);
     };
 
     const wink = () => {

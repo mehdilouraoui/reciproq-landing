@@ -42,8 +42,6 @@ export const Kinesis: FCC<{
             };
 
             if (isMobile === false) {
-                console.log('ici');
-
                 const replace = () => {
                     if (replaceOnLeave) {
                         gsap.to(childRef.current, {
