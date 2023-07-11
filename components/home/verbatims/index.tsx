@@ -183,23 +183,23 @@ export const Verbatims = () => {
                 <MobileWrapper className="identity-w">
                     <Identity
                         index={0}
-                        img="/assets/img/guillaume.png"
-                        name="Guillaume"
+                        img="/assets/img/maud.png"
+                        name="Maud"
                         id="#098567354"
-                        city="Le Controis-en-Sologne"
+                        city="Tarbes"
                         label1="Libéral"
-                        label2="Troubles anxieux"
+                        label2="Troubles alimentaires"
                         top={40}
                         left={40}
                     />
                     <Identity
                         index={1}
-                        img="/assets/img/guillaume.png"
-                        name="Guillaume"
-                        id="#098567354"
-                        city="Le Controis-en-Sologne"
+                        img="/assets/img/anne.png"
+                        name="Anne"
+                        id="#098567312"
+                        city="Besançon"
                         label1="Libéral"
-                        label2="Troubles anxieux"
+                        label2="Troubles de l'humeur"
                         top={48}
                         left={101}
                     />
@@ -207,7 +207,7 @@ export const Verbatims = () => {
                         index={2}
                         img="/assets/img/guillaume.png"
                         name="Guillaume"
-                        id="#098567354"
+                        id="#098Z92939"
                         city="Le Controis-en-Sologne"
                         label1="Libéral"
                         label2="Troubles anxieux"
@@ -216,23 +216,23 @@ export const Verbatims = () => {
                     />
                     <Identity
                         index={3}
-                        img="/assets/img/guillaume.png"
-                        name="Guillaume"
-                        id="#098567354"
-                        city="Le Controis-en-Sologne"
+                        img="/assets/img/mehdi.png"
+                        name="Mehdi"
+                        id="#098567230"
+                        city="Montauban"
                         label1="Libéral"
-                        label2="Troubles anxieux"
+                        label2="Troubles psychotiques"
                         top={104}
                         left={48}
                     />
                     <Identity
                         index={4}
-                        img="/assets/img/guillaume.png"
-                        name="Guillaume"
-                        id="#098567354"
-                        city="Le Controis-en-Sologne"
-                        label1="Libéral"
-                        label2="Troubles anxieux"
+                        img="/assets/img/marie.png"
+                        name="Marie"
+                        id="#098532009"
+                        city="Bordeaux"
+                        label1="Clinique"
+                        label2="ESPT"
                         top={71}
                         left={15}
                     />

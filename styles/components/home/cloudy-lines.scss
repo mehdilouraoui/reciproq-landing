@@ -1,39 +1,42 @@
 /* stylelint-disable selector-max-compound-selectors */
 .home {
     .cloudy-lines {
-        height: 50rem;
+        height: 45rem;
         background: $blue;
         position: relative;
         border: solid 1px $black;
         width: 100%;
         margin: 0 0 45rem;
+        font-family: "Epilogue";
 
         &--kinesis {
             position: absolute;
             width: fit-content;
 
             &:nth-child(1) {
-                top: -5rem;
+                top: -4rem;
                 left: 30rem;
                 transform: rotate(1.5deg);
             }
 
             &:nth-child(2) {
-                top: 5rem;
+                top: 7rem;
                 left: 40rem;
                 transform: rotate(10deg);
             }
 
             &:nth-child(3) {
-                top: 12.5rem;
+                top: 15.5rem;
                 left: 20rem;
                 transform: rotate(-6.5deg);
+                z-index: 1;
             }
 
             &:nth-child(4) {
-                top: 20rem;
+                top: 24rem;
                 left: 45rem;
                 transform: rotate(5deg);
+                z-index: 2;
             }
         }
 
@@ -94,7 +97,7 @@
             &-4 {
                 right: 20rem;
                 width: 21rem;
-                bottom: 0;
+                bottom: -10rem;
             }
         }
     }

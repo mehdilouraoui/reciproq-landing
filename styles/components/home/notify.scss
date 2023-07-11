@@ -1,6 +1,6 @@
 /* stylelint-disable selector-no-qualifying-type */
 .notify {
-    height: 92rem;
+    height: 100rem;
     background: $blue;
     display: flex;
     justify-content: flex-start;
@@ -28,7 +28,54 @@
         transform: translate3d(0, 0.5rem, 0);
     }
 
+    &-arrow {
+        position: absolute;
+        position: absolute;
+        right: 5rem;
+        bottom: 15rem;
+        cursor: pointer;
+    }
+
     &-newsletter {
+
+        &-validate-heart {
+            width: 3rem;
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            width: 100vw;
+
+            svg {
+                position: absolute;
+                width: 4rem;
+                opacity: 0;
+            }
+
+            :nth-child(1) {
+                top: 60rem;
+                right: 27rem;
+                width: 2rem;
+            }
+
+            :nth-child(2) {
+                top: 62rem;
+                right: 32rem;
+                width: 2.5rem;
+            }
+
+            :nth-child(3) {
+                top: 64rem;
+                right: 26rem;
+                width: 3rem;
+            }
+
+            :nth-child(4) {
+                top: 67rem;
+                right: 35rem;
+            }
+        }
+
         &-options {
             margin: 0 2rem;
             width: 30rem;
@@ -36,6 +83,7 @@
             border-radius: 10px;
             border: solid 1px $black;
             position: relative;
+            z-index: 4;
         }
 
         &-option {
@@ -53,6 +101,15 @@
                 font-weight: 600;
                 padding-left: 2.5rem;
                 cursor: pointer;
+                position: relative;
+
+                &::after {
+                    content: ">";
+                    transform: rotate(90deg);
+                    right: 3rem;
+                    position: absolute;
+
+                }
             }
 
             ul {
@@ -113,10 +170,10 @@
                 border: solid 1px;
                 width: 24.5rem;
                 padding: 0.5rem 0 0;
+                text-align: center;
 
                 &::placeholder {
                     font-size: 1.5rem;
-                    padding-left: 2rem;
                 }
             }
         }
@@ -144,6 +201,7 @@
 
     &-footer {
         background: $purple;
+        z-index: 2;
         height: 8rem;
         width: 100%;
         display: flex;

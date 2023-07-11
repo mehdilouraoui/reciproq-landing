@@ -33,14 +33,16 @@
 
         &-sign {
             position: absolute;
-            bottom: 40rem;
-            right: 10rem;
-            width: 11rem;
+            bottom: 20rem;
+            right: 8rem;
+            width: 17rem;
 
             span {
                 position: absolute;
-                top: 1rem;
-                padding: 2rem;
+                top: 2rem;
+                padding: 3rem;
+                font-size: 1.5rem;
+                font-weight: 800;
                 transform: rotate(14.22deg);
                 text-align: center;
 
@@ -83,15 +85,16 @@
                 &-item {
                     height: 100%;
                 }
+
+                &:nth-child(4) {
+                    margin-left: 15.5rem;
+                }
             }
 
             &:not(:nth-child(3n)) {
                 margin-right: 2rem;
             }
 
-            &:nth-child(4) {
-                margin-left: 15.5rem;
-            }
 
             &-year {
                 font-size: $fs-h1;

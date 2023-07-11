@@ -52,6 +52,22 @@
     }
   }
 
+
+  &:disabled {
+    opacity: 0.2;
+
+    &:hover {
+
+      .btn-up {
+        transform: translate3d(-5px, -5px, 0);
+      }
+
+      .btn-base {
+        transform: none;
+      }
+    }
+  }
+
   &-up {
     padding: 1.7rem 2.5rem;
     border: solid 1px $black;
@@ -185,6 +201,26 @@
 
 .float {
   animation: float .9s infinite alternate-reverse ease-in-out;
+}
+
+.blink {
+  transform-origin: center center;
+  animation: blink 2.4s infinite;
+}
+
+@keyframes blink {
+  90% {
+    transform: none;
+    animation-timing-function: ease-in;
+  }
+
+  93% {
+    transform: translate(0px, -11px) scaleY(0.1);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+  }
 }
 
 @keyframes dashline {
